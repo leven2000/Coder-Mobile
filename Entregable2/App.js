@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, FlatList, TouchableOpacity, Modal} from 'react-native';
+import { CustomModal, AddTask} from './components/index';
 
 export default function App() {
 
@@ -45,26 +46,20 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View>
-        <TextInput
-        placeholder='New Task'
-        selectionColor='#4A306D'
-        placeholderTextColor='#4A306D'
-        onChangeText={onHandleChangeText}
-        value={task}
-        />
-        <Button
-        title='Add'
-        onPress={addItem}
-        />
-      </View>
+      <AddTask
+      item ={task}
+      onChangeText={onHandleChangeText}
+      placeHolder ='new Task'
+      OnPressButton ={addItem}
+      textButton ='Add'
+      />
       <FlatList
         style={itemList}
         data={tasks}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />
-      <Modal animationType='slide' visible={modalVisible}>
+      <CustomModal animationType='slide' visible={modalVisible}>
         <View style={modalContainer}>
           <Text>Detalle</Text>
         </View>
@@ -84,7 +79,7 @@ export default function App() {
             onPress={() => setModalVisible(!modalVisible)}
           />
         </View>
-      </Modal>
+      </CustomModal>
     </View>
   );
 }
