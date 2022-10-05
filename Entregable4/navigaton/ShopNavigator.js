@@ -1,21 +1,21 @@
 import React from "react";
-import{NavigationContainer} from "@react-navigation/native";
+
 import{createNativeStackNavigator} from "@react-navigation/native-stack";
 
-import Categories from "../screens/Categories";
-import BreadDetails from "../screens/BreadDetails";
-import CategoryBread from "../screens/CategoryBread";
+import Categories from "../screens/categories/Categories";
+import Details from "../screens/details/Details";
+import Products from "../screens/products/Products";
 
 const Stack = createNativeStackNavigator();
 
 const ShopNavigator = () => {
-    <NavigationContainer>
+    return(
         <Stack.Navigator initialRouteName="home">
             <Stack.Screen name="Home" component={Categories}/>
-            <Stack.Screen name="Products" component={BreadDetails}/>
-            <Stack.Screen name="Details" component={CategoryBread}/>            
+            <Stack.Screen name="Products" component={Products}/>
+            <Stack.Screen name="Details" component={Details}/>            
         </Stack.Navigator>
-    </NavigationContainer>
-};
+    )
+}
 
 export default ShopNavigator;
