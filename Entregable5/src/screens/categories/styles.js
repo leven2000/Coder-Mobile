@@ -6,5 +6,8 @@
         flex:1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    containerList: {
+        flex: 1,
     }
 })

@@ -2,7 +2,7 @@ import React from 'react';
 import {useFonts} from 'expo-font';
 import { ActivityIndicator } from 'react-native';
 
-import AppNavigator from './navigaton';
+import AppNavigator from './src/navigaton';
 
 export default function App(){
   const [loaded] = useFonts({     
